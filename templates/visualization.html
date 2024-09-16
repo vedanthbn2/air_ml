@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" type="image/jpeg" href="{{ url_for('static', filename='airquality.jpeg') }}">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualizations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .chart-container {
+            margin-bottom: 30px;
+        }
+
+        img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .button:hover {
+            background-color: #45a049;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #4CAF50;
+            color: white;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Visualizations</h1>
+</header>
+
+<div class="container">
+    <div class="chart-container">
+        <h2>Correlation Plot</h2>
+        <img src="{{ url_for('static', filename='correlogram.png') }}" alt="Correlation Plot">
+    </div>
+</div>
+
+<div class="container">
+    <div class="chart-container">
+        <h2>Density Bars</h2>
+        <img src="{{ url_for('static', filename='density_plot.png') }}" alt="Density Plot">
+    </div>
+</div>
+
+<div class="container">
+    <div class="chart-container">
+        <h2>Pairwise Plot</h2>
+        <img src="{{ url_for('static', filename='pairplot.png') }}" alt="Pairwise Plot">
+    </div>
+</div>
+
+<div class="container">
+    <div class="chart-container">
+        <h2>Scatter Plot</h2>
+        <img src="{{ url_for('static', filename='scatter_plot.png') }}" alt="Scatter Plot">
+    </div>
+</div>
+
+<div class="container">
+    <div class="chart-container">
+        <h2>AQI Category Distribution</h2>
+        <img src="{{ url_for('static', filename='pie_chart.png') }}" alt="AQI Category Pie Chart">
+    </div>
+</div>
+
+<div class="container">
+    <div class="chart-container">
+        <h2>Scatter Fit</h2>
+        <img src="{{ url_for('static', filename='scatter_fit.png') }}" alt="Time Series Plot">
+    </div>
+</div>
+
+<!-- Button to go back to the prediction page -->
+<div class="container">
+    <div class="button-container">
+        <a href="/" class="button">Back to Prediction</a>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2024 Air Quality Prediction</p>
+</footer>
+
+</body>
+</html>

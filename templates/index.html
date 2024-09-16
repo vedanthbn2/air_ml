@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" type="image/jpeg" href="{{ url_for('static', filename='airquality.jpeg') }}">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Air Quality Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="number"] {
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        button, a.button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+            cursor: pointer;
+            font-size: 1rem;
+            text-decoration: none;
+        }
+
+        button:hover, a.button:hover {
+            background-color: #45a049;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #4CAF50;
+            color: white;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Air Quality Prediction</h1>
+    </header>
+
+    <div class="container">
+        <!-- Form for input -->
+        <form action="/predict" method="post">
+            <label for="so2">SO2 Level (Sulfur Dioxide):</label>
+            <input type="number" step="1" id="so2" name="so2" value="{{ so2 }}" required>
+
+            <label for="no2">NO2 Level (Nitrogen Dioxide):</label>
+            <input type="number" step="1" id="no2" name="no2" value="{{ no2 }}" required>
+
+            <label for="pm10">PM10 Level (Particulate Matter):</label>
+            <input type="number" step="1" id="pm10" name="pm10" value="{{ pm10 }}" required>
+
+            <label for="spm">SPM Level (Suspended Particulate Matter):</label>
+            <input type="number" step="1" id="spm" name="spm" value="{{ spm }}" required>
+
+            <div class="button-container">
+                <button type="submit">Predict</button>
+                <a href="/clear" class="button">Clear All Data</a>
+                <a href="/visualize" class="button">View Visualizations</a>
+            </div>
+        </form>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Air Quality Prediction</p>
+    </footer>
+</body>
+</html>

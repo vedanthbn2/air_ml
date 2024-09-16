@@ -1,0 +1,13 @@
+airquality/
+│
+├── app.py
+├── main.py
+├── model.pkl
+├── city_day.csv
+├── requirements.txt
+└── templates/
+    └── index.html
+    └── result.html
+    └── visualization.html
+    └── airquality.jpeg
+
